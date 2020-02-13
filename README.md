@@ -1,0 +1,1 @@
+# husky-prepare-commit-msg-example
