@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/mikhailsidorov/husky-prepare-commit-msg-example/issues"
   },
-  "homepage": "https://github.com/mikhailsidorov/husky-prepare-commit-msg-example#readme"
+  "homepage": "https://github.com/mikhailsidorov/husky-prepare-commit-msg-example#readme",
+  "devDependencies": {
+    "husky": "^4.2.3"
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": ".githooks/prepare-commit-msg ${HUSKY_GIT_PARAMS}"
+    }
+  }
 }
