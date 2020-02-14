@@ -21,7 +21,7 @@
   },
   "husky": {
     "hooks": {
-      "prepare-commit-msg": ".githooks/prepare-commit-msg ${HUSKY_GIT_PARAMS}"
+      "prepare-commit-msg": "bash .githooks/prepare-commit-msg ${HUSKY_GIT_PARAMS}"
     }
   }
 }
