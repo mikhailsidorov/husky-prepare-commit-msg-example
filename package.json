@@ -1,0 +1,19 @@
+{
+  "name": "husky-prepare-commit-msg-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikhailsidorov/husky-prepare-commit-msg-example.git"
+  },
+  "author": "Mikhail Sidorov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikhailsidorov/husky-prepare-commit-msg-example/issues"
+  },
+  "homepage": "https://github.com/mikhailsidorov/husky-prepare-commit-msg-example#readme"
+}
