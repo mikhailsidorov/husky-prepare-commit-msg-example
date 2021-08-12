@@ -1,0 +1,31 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+COMMIT_MSG_FILE="${1}"
+
+if [ -z "$BRANCHES_TO_SKIP" ]; then
+  BRANCHES_TO_SKIP=(master develop)
+fi
+
+BRANCH_NAME="$(git symbolic-ref --short HEAD)"
+BRANCH_NAME="${BRANCH_NAME##*/}"
+
+is_branch_excluded() {
+  result=0
+
+  for branch in ${BRANCHES_TO_SKIP[@]}; do
+    if [ $branch = $BRANCH_NAME ]; then
+      result=1
+    fi
+  done
+  echo $result
+}
+
+is_branch_in_commit_msg() {
+  echo "$(head -1 $COMMIT_MSG_FILE | grep -c --regexp=^${1}.*$)"
+}
+
+if [ -n "$BRANCH_NAME" ] && ! [[ $(is_branch_excluded $BRANCH_NAME) -eq 1 ]] &&
+  ! [[ $(is_branch_in_commit_msg $BRANCH_NAME) -eq 1 ]]; then
+  sed -i'.bak' -e "1s/^/$BRANCH_NAME /" $COMMIT_MSG_FILE
+fi
