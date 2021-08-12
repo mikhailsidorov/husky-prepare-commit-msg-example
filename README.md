@@ -1,7 +1,9 @@
 # Husky prepare-commit-msg example
+
 Example project with prepare-commit-msg hook configured to prepend branch name to commit message automaticaly
 
 ## Requirements
+
 * bash
 
 ## Run
