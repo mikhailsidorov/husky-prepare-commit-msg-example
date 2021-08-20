@@ -9,7 +9,7 @@ Example project with prepare-commit-msg hook configured to prepend branch name t
 ## Run
 
     npm install
-    git checkout -b issue-123
+    git checkout -b fix/issue-123
     touch example.txt
     git add .
     git commit -m "My new commit"
